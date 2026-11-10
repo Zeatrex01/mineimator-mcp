@@ -1,0 +1,380 @@
+{
+  "version": 1,
+  "rig": "human/wide/steve@1",
+  "units": "degrees",
+  "space": "local",
+  "owned_channels": [
+    "ROT_X",
+    "ROT_Y",
+    "ROT_Z",
+    "BEND_ANGLE_X",
+    "BEND_ANGLE_Y",
+    "BEND_ANGLE_Z"
+  ],
+  "base": {
+    "body": {},
+    "head": {},
+    "left_arm": {},
+    "right_arm": {},
+    "left_leg": {},
+    "right_leg": {}
+  },
+  "missing_owned_value": 0,
+  "poses": {
+    "neutral": {
+      "description": "Standing at rest: every owned channel is zero. A policy default.",
+      "transition": "easeinoutsine",
+      "parts": {},
+      "provenance": {
+        "numbers": "policy (all zero)",
+        "emotion_label": "n/a"
+      }
+    },
+    "surprised": {
+      "description": "Both arms thrown forward, head tipped slightly down.",
+      "transition": "easeinoutsine",
+      "parts": {
+        "head": {
+          "ROT_X": 8
+        },
+        "left_arm": {
+          "ROT_X": -65
+        },
+        "right_arm": {
+          "ROT_X": -75
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "not reviewed on screen"
+      }
+    },
+    "thinking": {
+      "description": "Head tipped back, one arm raised. Its outgoing transition is instant: it holds until the next key.",
+      "transition": "instant",
+      "parts": {
+        "head": {
+          "ROT_X": -12
+        },
+        "right_arm": {
+          "ROT_X": -70
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "not reviewed on screen"
+      }
+    },
+    "relieved": {
+      "description": "Head tipped slightly down, arms at rest.",
+      "transition": "easeoutback",
+      "parts": {
+        "head": {
+          "ROT_X": 8
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "not reviewed on screen"
+      }
+    },
+    "hungry": {
+      "description": "Head tipped down, both arms in front with the hands turned toward each other.",
+      "transition": "easeinoutsine",
+      "parts": {
+        "head": {
+          "ROT_X": 30
+        },
+        "right_arm": {
+          "ROT_X": -30,
+          "ROT_Y": 20
+        },
+        "left_arm": {
+          "ROT_X": -30,
+          "ROT_Y": -20
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "not reviewed on screen"
+      }
+    },
+    "lean_to_bite": {
+      "description": "Body bent forward, head down, arms hanging a little forward.",
+      "transition": "easeinoutsine",
+      "parts": {
+        "head": {
+          "ROT_X": 20
+        },
+        "body": {
+          "BEND_ANGLE_X": -25
+        },
+        "right_arm": {
+          "ROT_X": -25
+        },
+        "left_arm": {
+          "ROT_X": -25
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "not reviewed on screen"
+      }
+    },
+    "jump_cheer": {
+      "description": "Both arms thrown up and slightly apart, head tipped back. Pair it with a root POS_Z key for the jump itself.",
+      "transition": "easeoutback",
+      "parts": {
+        "head": {
+          "ROT_X": -15
+        },
+        "right_arm": {
+          "ROT_X": -150,
+          "ROT_Y": -25
+        },
+        "left_arm": {
+          "ROT_X": -150,
+          "ROT_Y": 25
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "not reviewed on screen"
+      }
+    },
+    "lift_two_hands": {
+      "description": "Both arms raised in front to lift something up; head slightly back, knees a little bent.",
+      "transition": "easeinoutsine",
+      "parts": {
+        "head": {
+          "ROT_X": -5
+        },
+        "right_arm": {
+          "ROT_X": -115
+        },
+        "left_arm": {
+          "ROT_X": -115
+        },
+        "right_leg": {
+          "ROT_X": -8
+        },
+        "left_leg": {
+          "ROT_X": -8
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "not reviewed on screen"
+      }
+    },
+    "disappointed": {
+      "description": "Head down, a small slouch, arms hanging a touch back: shoulders dropped.",
+      "transition": "easeinoutsine",
+      "parts": {
+        "head": {
+          "ROT_X": 22
+        },
+        "body": {
+          "BEND_ANGLE_X": -8
+        },
+        "right_arm": {
+          "ROT_X": 4
+        },
+        "left_arm": {
+          "ROT_X": 4
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "not reviewed on screen"
+      }
+    },
+    "walk_a": {
+      "description": "Walk cycle, key A: right leg forward, left arm forward, small swing.",
+      "transition": "easeinoutsine",
+      "parts": {
+        "right_leg": {
+          "ROT_X": -30
+        },
+        "left_leg": {
+          "ROT_X": 30
+        },
+        "left_arm": {
+          "ROT_X": -30
+        },
+        "right_arm": {
+          "ROT_X": 30
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "n/a"
+      }
+    },
+    "walk_b": {
+      "description": "Walk cycle, key B: the mirror of walk_a.",
+      "transition": "easeinoutsine",
+      "parts": {
+        "right_leg": {
+          "ROT_X": 30
+        },
+        "left_leg": {
+          "ROT_X": -30
+        },
+        "left_arm": {
+          "ROT_X": 30
+        },
+        "right_arm": {
+          "ROT_X": -30
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "n/a"
+      }
+    },
+    "run_a": {
+      "description": "Run cycle, key A: long stride, body leaned forward, arms pumping.",
+      "transition": "easeinoutsine",
+      "parts": {
+        "body": {
+          "BEND_ANGLE_X": -10
+        },
+        "head": {
+          "ROT_X": 8
+        },
+        "right_leg": {
+          "ROT_X": -55
+        },
+        "left_leg": {
+          "ROT_X": 45
+        },
+        "left_arm": {
+          "ROT_X": -70
+        },
+        "right_arm": {
+          "ROT_X": 55
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "n/a"
+      }
+    },
+    "run_b": {
+      "description": "Run cycle, key B: the mirror of run_a.",
+      "transition": "easeinoutsine",
+      "parts": {
+        "body": {
+          "BEND_ANGLE_X": -10
+        },
+        "head": {
+          "ROT_X": 8
+        },
+        "right_leg": {
+          "ROT_X": 45
+        },
+        "left_leg": {
+          "ROT_X": -55
+        },
+        "left_arm": {
+          "ROT_X": 55
+        },
+        "right_arm": {
+          "ROT_X": -70
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "n/a"
+      }
+    },
+    "jump_crouch": {
+      "description": "Before a jump: body bent forward, arms swung back, legs a little forward.",
+      "transition": "easeoutquad",
+      "parts": {
+        "body": {
+          "BEND_ANGLE_X": -20
+        },
+        "head": {
+          "ROT_X": 10
+        },
+        "right_arm": {
+          "ROT_X": 45
+        },
+        "left_arm": {
+          "ROT_X": 45
+        },
+        "right_leg": {
+          "ROT_X": -15
+        },
+        "left_leg": {
+          "ROT_X": -15
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "n/a"
+      }
+    },
+    "jump_air": {
+      "description": "In the air: arms up, one leg tucked forward, head back.",
+      "transition": "easeinquad",
+      "parts": {
+        "head": {
+          "ROT_X": -10
+        },
+        "right_arm": {
+          "ROT_X": -150,
+          "ROT_Y": -15
+        },
+        "left_arm": {
+          "ROT_X": -150,
+          "ROT_Y": 15
+        },
+        "right_leg": {
+          "ROT_X": -30
+        },
+        "left_leg": {
+          "ROT_X": 10
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "n/a"
+      }
+    },
+    "jump_land": {
+      "description": "Landing: body bent forward, arms out in front, legs slightly forward.",
+      "transition": "easeoutquad",
+      "parts": {
+        "body": {
+          "BEND_ANGLE_X": -22
+        },
+        "head": {
+          "ROT_X": 12
+        },
+        "right_arm": {
+          "ROT_X": -35
+        },
+        "left_arm": {
+          "ROT_X": -35
+        },
+        "right_leg": {
+          "ROT_X": -12
+        },
+        "left_leg": {
+          "ROT_X": -12
+        }
+      },
+      "provenance": {
+        "numbers": "AUTHORED by hand for this library (not measured from any project)",
+        "emotion_label": "n/a"
+      }
+    }
+  },
+  "provenance": {
+    "numbers": "All poses AUTHORED by hand for this library; none is measured from a project. Whether they look right is judged on screen (README, Poses).",
+    "emotion_labels": "not reviewed on screen"
+  }
+}

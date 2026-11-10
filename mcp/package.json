@@ -1,0 +1,32 @@
+{
+  "name": "mineimator-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server that builds and edits Mine-imator .miproject files (rendering stays manual).",
+  "author": "Zeatrex01",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node src/main.ts",
+    "test": "node --test test/*.test.ts",
+    "check": "tsc --noEmit",
+    "build:data": "node scripts/build-example.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3"
+  },
+  "files": [
+    "src",
+    "data",
+    "examples",
+    "README.md"
+  ]
+}

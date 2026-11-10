@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "number",
+      "const": 1
+    },
+    "rig": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+\\/[a-z0-9_]+\\/[a-z0-9_]+@\\d+$",
+      "description": "Rig id such as \"human/wide/steve@1\"."
+    },
+    "units": {
+      "type": "string",
+      "const": "degrees"
+    },
+    "space": {
+      "type": "string",
+      "const": "local"
+    },
+    "owned_channels": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ROT_X",
+          "ROT_Y",
+          "ROT_Z",
+          "BEND_ANGLE_X",
+          "BEND_ANGLE_Y",
+          "BEND_ANGLE_Z"
+        ]
+      },
+      "description": "Channels a pose sets completely on each part (unsupported bends are skipped)."
+    },
+    "base": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "propertyNames": {
+          "type": "string",
+          "enum": [
+            "ROT_X",
+            "ROT_Y",
+            "ROT_Z",
+            "BEND_ANGLE_X",
+            "BEND_ANGLE_Y",
+            "BEND_ANGLE_Z"
+          ]
+        },
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "description": "The parts of the rig and their resting values."
+    },
+    "missing_owned_value": {
+      "type": "number"
+    },
+    "poses": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "source_frame": {
+            "description": "Frame of the measured project this pose was read from.",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "transition": {
+            "type": "string",
+            "description": "Outgoing transition written on the pose's keyframes."
+          },
+          "parts": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]*$"
+            },
+            "additionalProperties": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "enum": [
+                  "ROT_X",
+                  "ROT_Y",
+                  "ROT_Z",
+                  "BEND_ANGLE_X",
+                  "BEND_ANGLE_Y",
+                  "BEND_ANGLE_Z"
+                ]
+              },
+              "additionalProperties": {
+                "type": "number"
+              }
+            },
+            "description": "Channel values per part; every owned channel left out gets missing_owned_value."
+          },
+          "provenance": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "transition",
+          "parts"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "version",
+    "rig",
+    "units",
+    "space",
+    "owned_channels",
+    "base",
+    "missing_owned_value",
+    "poses",
+    "provenance"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+node_modules/
+out/
+work/
+data/local/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+
+# Mine-imator writes these next to a project it opens
+*.backup[0-9]*
+thumbnail.png
